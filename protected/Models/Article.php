@@ -9,7 +9,7 @@ class Article extends Model
     public string $tittle;
     public string $content;
 
-    public static function lastNews($num)
+    public static function lastNews($num)  //метод, отображающий несколько последних новостей
     {
         $sql = 'SELECT * FROM ' . self::$table . '
                 ORDER BY id DESC LIMIT ' . $num . ';';

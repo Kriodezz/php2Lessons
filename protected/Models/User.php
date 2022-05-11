@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * Класс, созданный на уроке
+ */
 require_once __DIR__ . '/../Model.php';
 
 class User extends Model

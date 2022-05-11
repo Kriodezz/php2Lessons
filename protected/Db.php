@@ -21,7 +21,7 @@ class Db
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
-    public function execute($query, $params = []): bool
+    public function execute($query, $params = []): bool //здесь пока не стал заморачиваться
     {
         $sth = $this->dbh->prepare($query);
         return $sth->execute($params);

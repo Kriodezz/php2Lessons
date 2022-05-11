@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * Класс родитель для классов моделей
+ */
 abstract class Model
 {
     protected static $table = null;
