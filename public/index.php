@@ -5,11 +5,10 @@ require_once __DIR__ . '/../protected/Models/Product.php';
 require_once __DIR__ . '/../protected/Models/User.php';
 require_once __DIR__ . '/../controllers/ArticleController.php';
 
-if (!empty($_GET)) {
-    $oneArticle = new ArticleController();
-    $oneArticle->showOneArticle($_GET['id']);
-} else {
-    $listNews = new ArticleController();
-    $listNews->index(3);
-}
+$article = new ArticleController();
 
+if (!empty($_GET)) {
+    $article->showOneArticle($_GET['id']);
+} else {
+    $article->index(3);
+}
