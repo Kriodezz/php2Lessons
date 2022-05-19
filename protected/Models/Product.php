@@ -2,9 +2,11 @@
 /*
  * Класс, созданный на уроке
  */
-require_once __DIR__ . '/../Model.php';
+namespace Models;
+use Model;
+use Models\OrderableInterface;
 
-class Product extends Model
+class Product extends Model implements OrderableInterface
 {
     protected static $table = 'products';
 
@@ -12,5 +14,10 @@ class Product extends Model
     public $price;
     public $description;
     public $image;
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
 
 }

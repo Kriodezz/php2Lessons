@@ -12,5 +12,10 @@
     foreach ($news as $article) { ?>
         <a href="/index.php?id=<?php echo $article->id; ?>"><h3><?php echo $article->tittle; ?></h3></a>
 <?php } ?>
+
+<a href="templates/admin/insert.php">
+    <button>Добавить новость</button>
+</a>
+
 </body>
 </html>

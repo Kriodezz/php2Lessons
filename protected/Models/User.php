@@ -2,13 +2,16 @@
 /*
  * Класс, созданный на уроке
  */
-require_once __DIR__ . '/../Model.php';
+namespace Models;
+use Model;
 
 class User extends Model
 {
+
+    use HasEmailTrait;
+
     protected static $table = 'users';
 
-    public $email;
     public $password;
 
 }

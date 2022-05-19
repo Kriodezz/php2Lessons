@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../Model.php';
+namespace Models;
+use Model;
+use Db;
 
 class Article extends Model
 {
@@ -13,8 +15,8 @@ class Article extends Model
     {
         $sql = 'SELECT * FROM ' . self::$table . '
                 ORDER BY id DESC LIMIT ' . $num . ';';
-        $db = new Db();
-        return $db->query($sql, self::class);
+        $db = new \Db();
+        return $db->query($sql, [],self::class);
     }
 
 }
