@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 
 require_once __DIR__ . '/../protected/autoload.php';
 
