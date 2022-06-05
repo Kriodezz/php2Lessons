@@ -6,6 +6,8 @@
 
 abstract class Model
 {
+    use MagicTrait;
+
     protected static $table = null;
 
     public $id;
@@ -34,22 +36,20 @@ abstract class Model
     //Метод, который сохраняет, либо обновляет запись
     public function save(): void
     {
-        $data = get_object_vars($this);
-
         if (null === $this->id) {
-            $this->insert($data);
+            $this->insert();
         } else {
-            $this->update($data);
+            $this->update();
         }
     }
 
     //Добавляет новую запись
-    public function insert($data): void
+    public function insert(): void
     {
         $cols = [];
         $paramsName = [];
         $values = [];
-        foreach ($data as $key => $value) {
+        foreach ($this->data as $key => $value) {
             if ('id' == $key) {
                 continue;
             }
@@ -68,11 +68,11 @@ abstract class Model
     }
 
     //Обновляет существующую запись
-    public function update($data): void
+    public function update(): void
     {
         $params = [];
         $values = [];
-        foreach ($data as $key => $value) {
+        foreach ($this->data as $key => $value) {
             if ('id' == $key) {
                 continue;
             }
