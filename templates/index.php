@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<?php foreach ($this->product as $product) : ?>
+<?php foreach ($this->products as $product) : ?>
 <section>
     <h1></h1>
     <article></article>

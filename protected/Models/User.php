@@ -2,16 +2,19 @@
 /*
  * Класс, созданный на уроке
  */
+
 namespace Models;
+
 use Model;
 
 class User extends Model
 {
-
-    use HasEmailTrait;
-
     protected static $table = 'users';
 
-    public $password;
-
+    protected function validate_email($value)
+    {
+        if (strpos($value, '@') === false) {
+            die('неверный емейл');
+        }
+    }
 }

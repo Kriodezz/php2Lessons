@@ -29,7 +29,18 @@ require_once __DIR__ . '/../protected/autoload.php';
 /*
  * Код урока *************************
  */
+
+/*
 $data = \Models\Product::findAll();
 $view = new View();
 $view->products = $data;
 $view->display(__DIR__ . '/../templates/index.php');
+*/
+
+/*
+$user = new \Models\User();
+$user->email = 'test@test.com';
+$user->password = 'qwerty';
+$user->save();
+var_dump($user);
+*/
