@@ -31,5 +31,4 @@ class Config
     {
         return $this->data;
     }
-
 }

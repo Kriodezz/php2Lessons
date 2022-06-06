@@ -19,5 +19,4 @@ class Product extends Model implements OrderableInterface
     {
         return $this->price;
     }
-
 }

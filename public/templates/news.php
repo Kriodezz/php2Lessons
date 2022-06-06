@@ -9,9 +9,11 @@
 </head>
 <body>
 <?php
-    foreach ($news as $article) { ?>
-        <a href="/index.php?id=<?php echo $article->id; ?>"><h3><?php echo $article->tittle; ?></h3></a>
-<?php } ?>
+    foreach ($this->news as $article) :?>
+        <a href="/index.php?id=<?php echo $article->id; ?>">
+            <h3><?php echo $article->tittle; ?></h3>
+        </a>
+<?php endforeach; ?>
 
 <a href="templates/admin/insert.php">
     <button>Добавить новость</button>

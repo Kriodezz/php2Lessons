@@ -2,7 +2,6 @@
 
 trait MagicTrait
 {
-
     protected array $data = [];
 
     public function __set($name, $value)

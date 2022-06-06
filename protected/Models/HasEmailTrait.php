@@ -4,7 +4,7 @@ namespace Models;
 
 trait HasEmailTrait
 {
-    public $email;
+    public string $email;
 
     public function getEmail()
     {

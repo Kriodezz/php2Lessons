@@ -11,9 +11,17 @@
 
 <a href="/index.php"><button>К новостям</button></a>
 
-<h1><?php echo $article->tittle?></h1>
-<div><?php echo $article->content; ?></div>
-<a href="templates/admin/update.php?id=<?php echo $article->id; ?>">
+<h1><?php echo $this->article->tittle?></h1>
+<div><?php echo $this->article->content; ?></div>
+<p>
+    <i>
+        <?php echo $this->article->author ?
+            'Автор статьи: ' .  $this->article->author->name :
+            'Автор неизвестен';
+        ?>
+    </i>
+</p>
+<a href="templates/admin/update.php?id=<?php echo $this->article->id; ?>">
     <button>Редактировать новость</button>
 </a>
 

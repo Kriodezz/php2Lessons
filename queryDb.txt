@@ -1,0 +1,12 @@
+CREATE TABLE articles (
+    id SERIAL,
+    tittle VARCHAR(255) NOT NULL ,
+    content TEXT NOT NULL
+);
+
+CREATE TABLE authors (
+    id SERIAL,
+    name VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE articles ADD author_id INT DEFAULT 0;

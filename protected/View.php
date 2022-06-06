@@ -15,5 +15,4 @@ class View
     {
         include $template;
     }
-
 }
