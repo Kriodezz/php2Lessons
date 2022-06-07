@@ -1,5 +1,7 @@
 <?php
 
+use Models\Author;
+
 trait MagicTrait
 {
     protected array $data = [];
@@ -16,7 +18,16 @@ trait MagicTrait
 
     public function __get($name)
     {
-        return $this->data[$name];
+        if ($name === 'author') {
+            $author = Author::findById($this->author_id);
+
+            if ($author === false) {
+                return null;
+            } else {
+                return $author;
+            }
+        } else {
+        return $this->data[$name]; }
     }
 
     public function __isset($name)

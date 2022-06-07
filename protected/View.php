@@ -1,6 +1,6 @@
 <?php
 
-class View
+class View implements \Countable
 {
     use MagicTrait;
 
@@ -14,5 +14,10 @@ class View
     public function display($template)
     {
         include $template;
+    }
+
+    public function count(): int
+    {
+        return count($this->data);
     }
 }

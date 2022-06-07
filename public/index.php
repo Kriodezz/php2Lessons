@@ -27,7 +27,7 @@ if (!empty($_GET)) {
 }
 
 /*
- * Код урока *************************
+ * Код урока 3 *************************
  */
 
 /*
@@ -44,3 +44,11 @@ $user->password = 'qwerty';
 $user->save();
 var_dump($user);
 */
+
+/*
+ * Код урока 4 *************************
+ */
+
+//$view = new View();
+//$view->products =  \Models\Product::findAll();
+//echo count($view); //без интерфейса Countable ф-ция каунт с объектами не работает

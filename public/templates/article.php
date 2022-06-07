@@ -10,7 +10,6 @@
 <body>
 
 <a href="/index.php"><button>К новостям</button></a>
-
 <h1><?php echo $this->article->tittle?></h1>
 <div><?php echo $this->article->content; ?></div>
 <p>
