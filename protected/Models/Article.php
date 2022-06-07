@@ -7,7 +7,6 @@ use Model;
 class Article extends Model
 {
     protected static $table = 'articles';
-
     public string $tittle;
     public string $content;
     public int $author_id;

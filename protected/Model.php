@@ -9,7 +9,6 @@ abstract class Model
     use MagicTrait;
 
     protected static $table = null;
-
     public $id;
 
     //Поиск всех новостей
