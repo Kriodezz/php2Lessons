@@ -13,7 +13,7 @@
 <?php foreach ($this->products as $product) : ?>
 <section>
     <h1>
-        <a href="/product.php?id=<?php echo $product->id; ?>">
+        <a href="/ProductController/One/?id=<?php echo $product->id; ?>">
             <?php echo $product->tittle; ?>
         </a>
     </h1>

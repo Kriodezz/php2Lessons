@@ -55,5 +55,13 @@ var_dump($user);
 //echo count($view); //без интерфейса Countable ф-ция каунт с объектами не работает
 //echo $view->count(); //ф-ция каунт без интерфейса Countable
 
-$controller = new \Controllers\ProductController();
-$controller->action('Default');
+//$controller = new \Controllers\ProductController();
+//$controller->action('Default');
+
+$uri = $_SERVER['REQUEST_URI'];
+$parts = explode('/', $uri);
+$controllerName = '\\Controllers\\' . $parts[1];
+$actionName = $parts[2] ?? 'Default';
+
+$controller = new $controllerName;
+$controller->action($actionName, $_GET);
