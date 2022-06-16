@@ -15,7 +15,7 @@ abstract class Model
     public static function findAll()
     {
         $sql = 'SELECT * FROM ' . static::$table . ';';
-        $db = new \Db();
+        $db = new Db();
         return $db->query($sql, [], static::class);
     }
 
@@ -23,7 +23,7 @@ abstract class Model
     public static function findById($id)
     {
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE id = :id;';
-        $db = new \Db();
+        $db = new Db();
         $data = $db->query($sql, [':id' => $id], static::class);
         if (null == $data) {
             return false;
@@ -61,7 +61,7 @@ abstract class Model
         (' . implode(', ', $cols) . ') 
         VALUES (' . implode(', ', $paramsName) . ')';
 
-        $db = new \Db();
+        $db = new Db();
         $db->execute($sql, $values);
         $this->id = $db->lastInsertId();
     }
@@ -82,14 +82,14 @@ abstract class Model
         $sql = 'UPDATE ' . static::$table . ' 
         SET ' . implode(', ', $params) . '
         WHERE id = ' . $this->id;
-        $db = new \Db();
+        $db = new Db();
         $db->execute($sql, $values);
     }
 
     //Удаляет запись
     public function delete(): void
     {
-        $db = new \Db();
+        $db = new Db();
         $db->query(
             'DELETE FROM ' . static::$table . ' WHERE id = :id',
             [':id' => $this->id]

@@ -2,29 +2,29 @@
 
 require_once __DIR__ . '/../protected/autoload.php';
 
-use controllers\ArticleController;
-
-$article = new ArticleController();
-
-if (!empty($_POST)) {
-    switch ($_POST['submit']) {
-        case 'insert':
-            $article->add();
-            break;
-        case 'update':
-            $article->edit($_GET['edit']);
-            break;
-        case 'delete':
-            $article->delete($_GET['delete']);
-            break;
-    }
-}
-
-if (!empty($_GET)) {
-    $article->showOneArticle($_GET['id']);
-} else {
-    $article->index(3);
-}
+//use controllers\ArticleController;
+//
+//$article = new ArticleController();
+//
+//if (!empty($_POST)) {
+//    switch ($_POST['submit']) {
+//        case 'insert':
+//            $article->add();
+//            break;
+//        case 'update':
+//            $article->edit($_GET['edit']);
+//            break;
+//        case 'delete':
+//            $article->delete($_GET['delete']);
+//            break;
+//    }
+//}
+//
+//if (!empty($_GET)) {
+//    $article->showOneArticle($_GET['id']);
+//} else {
+//    $article->index(3);
+//}
 
 /*
  * Код урока 3 *************************
@@ -51,4 +51,9 @@ var_dump($user);
 
 //$view = new View();
 //$view->products =  \Models\Product::findAll();
+//$view->comments =  [];
 //echo count($view); //без интерфейса Countable ф-ция каунт с объектами не работает
+//echo $view->count(); //ф-ция каунт без интерфейса Countable
+
+$controller = new \Controllers\ProductController();
+$controller->action('Default');

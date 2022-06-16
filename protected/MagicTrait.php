@@ -18,17 +18,17 @@ trait MagicTrait
 
     public function __get($name)
     {
-//        if ($name === 'author') {
-//            $author = Author::findById($this->author_id);
-//
-//            if ($author === false) {
-//                return null;
-//            } else {
-//                return $author;
-//            }
-//        } else {
+        if ($name === 'author') {
+            $author = Author::findById($this->author_id);
+
+            if ($author === false) {
+                return null;
+            } else {
+                return $author;
+            }
+        } else {
         return $this->data[$name]; }
-//    }
+    }
 
     public function __isset($name)
     {

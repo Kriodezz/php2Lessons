@@ -10,18 +10,12 @@
 </head>
 <body>
 
-<?php foreach ($this->products as $product) : ?>
 <section>
-    <h1>
-        <a href="/product.php?id=<?php echo $product->id; ?>">
-            <?php echo $product->tittle; ?>
-        </a>
-    </h1>
-    <article><?php echo $product->description; ?></article>
-    <p><?php echo $product->price; ?></p>
+    <h1><?php echo $this->product->tittle; ?></h1>
+    <article><?php echo $this->product->description; ?></article>
+    <p><?php echo $this->product->price; ?></p>
 </section>
 <hr>
-<?php endforeach; ?>
 
 </body>
 </html>
