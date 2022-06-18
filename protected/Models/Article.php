@@ -11,7 +11,7 @@ class Article extends Model
     public string $content;
     public int $author_id;
 
-    public static function lastNews($num)  //метод, отображающий несколько последних новостей
+    public static function lastNews($num = 10)  //метод, отображающий несколько последних новостей
     {
         $sql = 'SELECT * FROM ' . self::$table . '
                 ORDER BY id DESC LIMIT ' . $num . ';';

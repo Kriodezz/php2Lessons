@@ -5,7 +5,7 @@ require_once __DIR__ . '/../protected/autoload.php';
 //use controllers\ArticleController;
 //
 //$article = new ArticleController();
-//
+
 //if (!empty($_POST)) {
 //    switch ($_POST['submit']) {
 //        case 'insert':
@@ -21,10 +21,11 @@ require_once __DIR__ . '/../protected/autoload.php';
 //}
 //
 //if (!empty($_GET)) {
-//    $article->showOneArticle($_GET['id']);
+//    $article->actionOne($_GET['id']);
 //} else {
-//    $article->index(3);
+//    $article->actionDefault();
 //}
+
 
 /*
  * Код урока 3 *************************
@@ -58,10 +59,11 @@ var_dump($user);
 //$controller = new \Controllers\ProductController();
 //$controller->action('Default');
 
-$uri = $_SERVER['REQUEST_URI'];
-$parts = explode('/', $uri);
-$controllerName = '\\Controllers\\' . $parts[1];
-$actionName = $parts[2] ?? 'Default';
-
-$controller = new $controllerName;
-$controller->action($actionName, $_GET);
+//$uri = $_SERVER['REQUEST_URI'];
+//
+//$parts = explode('/', $uri);
+//$controllerName = '\\Controllers\\' . $parts[1];
+//$actionName = $parts[2] ?? 'Default';
+//
+//$controller = new $controllerName;
+//$controller->action($actionName, $_GET);

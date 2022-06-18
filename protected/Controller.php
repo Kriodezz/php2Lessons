@@ -9,9 +9,19 @@ abstract class Controller
         $this->view = new View();
     }
 
+    protected function access()
+    {
+        //проверка прав доступа
+        return true;
+    }
+
     public function action($name, $params = [])
     {
-        $methodName = 'action' . $name;
-        $this->$methodName(...$params);
+        if ($this->access()) {
+            $methodName = 'action' . $name;
+            $this->$methodName(...$params);
+        } else {
+            die('Доступ закрыт');
+        }
     }
 }
